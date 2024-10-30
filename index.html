@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BLUE WHALE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Lightbox overlay styling */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+        
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+        
+        .lightbox img, .lightbox video {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="fish-name">
+                <a href="index.html">BLUE WHALE</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#predators">Prey & Predators</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#count">World Count</a></li>
+                    <li><a href="honesty.html">Honesty Declaration</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<!-- Home Section Start -->
+<section class="home-section" id="home">
+	<img src="home_img.jpeg" alt="Blue Whale">
+	<div class="banner">
+        <h1>BLUE WHALE</h1>
+    </div>
+	
+</section>
+<!-- Home Section End -->
+
+<!-- About Section Start -->
+<section class="about-section" id="about">
+	<h1>OVERVIEW:</h1>
+	<p>The Blue Whale (Balaenoptera musculus) is the largest mammal on Earth. These magnificent creatures can grow up to 100 feet long and weigh as much as 200 tons. Despite their size, Blue Whales feed on one of the smallest organisms in the ocean — krill. They can consume up to 4 tons of krill each day during feeding season. Blue Whales are known for their loud, low-frequency calls, which can travel long distances underwater.</p>
+	<h2>HABITAT:</h2>
+	<P>Blue Whales are found in all major oceans except the Arctic. They prefer deeper waters and are often found migrating between feeding grounds in polar regions and breeding grounds in tropical and subtropical waters.
+    </P>
+	<h2>BEHAVIOR & DIET</h2>
+	<p>Blue Whales are solitary animals, though they occasionally form small groups. Their diet consists almost exclusively of krill, and they feed by taking in large amounts of water and filtering it through their baleen plates.</p>
+	<h2>CONSERVATION</h2>
+	<p> Blue Whales are classified as endangered. They were heavily hunted during the 20th century, and while they are now protected, their population is still recovering. Climate change, pollution, and ship strikes remain significant threats.</p>
+</section>
+<!-- About Section End -->
+
+<section class="predators-section" id="predators">
+	<section>
+		<h2>Prey and Predators</h2>
+		<h3>Prey</h3>
+		<p>
+			Blue Whales feed almost exclusively on krill, tiny shrimp-like crustaceans found in large swarms in cold ocean waters. 
+			During feeding season, Blue Whales can consume up to 4 tons of krill per day. They use their baleen plates to filter huge volumes of water, trapping the krill inside their mouths.
+		</p>
+		<h3>Predators</h3>
+		<p>
+			Due to their enormous size, Blue Whales have very few natural predators. However, Orcas (also known as killer whales) are known to occasionally attack Blue Whale calves, though these attacks are rare. 
+			Human activities, such as ship strikes and entanglement in fishing gear, pose a much greater threat to Blue Whales than any natural predator.
+		</p>
+	</section>
+	
+	
+</section>
+
+<!-- Lightbox HTML Structure -->
+<div class="lightbox">
+    <div class="lightbox-content">
+        <span class="lightbox-close">&times;</span>
+        <img src="" alt="Lightbox Image">
+        <video controls style="display: none;"></video>
+    </div>
+</div>
+
+
+
+<!-- Gallery Section Start -->
+<section class="gallery-section" id="gallery">
+    <h2>Blue Whale Gallery</h2>
+    <figure>
+        <img src="1.jpeg" alt="Blue Whale">
+        <figcaption>Blue Whale</figcaption>
+    </figure>
+    <figure>
+        <img src="2.jpeg" alt="Blue Whale">
+        <figcaption>Blue Whale In Sea</figcaption>
+    </figure>
+    <figure>
+        <img src="3.jpeg" alt="Blue Whale">
+        <figcaption>Blue Whale in Deep Water</figcaption>
+    </figure>
+    <figure>
+        <img src="4.jpeg" alt="Blue Whale">
+        <figcaption>Blue Whale Swimming</figcaption>
+    </figure>
+    <figure>
+        <img src="5.jpeg" alt="Blue Whale">
+        <figcaption>Blue Whale Body Structure</figcaption>
+    </figure>
+    <figure>
+        <video src="bluewhale.mp4" controls></video>
+        <figcaption>Blue Whale Swimming</figcaption>
+    </figure>
+    <figure>
+        <video src="bluewhale2.mp4" controls></video>
+        <figcaption>Blue Whale Diving</figcaption>
+    </figure>
+</section>
+<!-- Gallery Section End -->
+
+<!-- jQuery script for sticky header and lightbox -->
+<script>
+    $(document).ready(function() {
+        // Sticky Header
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 50) {
+                $('.header').addClass('fixed');
+            } else {
+                $('.header').removeClass('fixed');
+            }
+        });
+
+        // Lightbox functionality
+        $('.gallery-section img, .gallery-section video').on('click', function() {
+            $('.lightbox').fadeIn();
+            const isVideo = $(this).is('video');
+            if (isVideo) {
+                $('.lightbox video').attr('src', $(this).attr('src')).show();
+                $('.lightbox img').hide();
+            } else {
+                $('.lightbox img').attr('src', $(this).attr('src')).show();
+                $('.lightbox video').hide();
+            }
+        });
+
+        // Close lightbox
+        $('.lightbox, .lightbox-close').on('click', function(e) {
+            if (e.target === this) {
+                $('.lightbox').fadeOut();
+                $('.lightbox img, .lightbox video').attr('src', '');
+            }
+        });
+    });
+</script>
+
+<section class="count-section" id="count">
+	<section>
+		<h2>World Count of Blue Whales</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Ocean Region</th>
+					<th>Estimated Population</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>North Atlantic</td>
+					<td>500 - 1,000</td>
+				</tr>
+				<tr>
+					<td>North Pacific</td>
+					<td>1,500 - 2,000</td>
+				</tr>
+				
+				<tr>
+					<td>Southern Ocean</td>
+					<td>5,000 - 10,000</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+	
+   
+</section>
+
+<p class="copyright">&copy; 2024 ALI MUSTAFA, SIMRANJIT SINGH Org.</p>
+
+</body>
+</html>
+

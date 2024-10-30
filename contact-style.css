@@ -1,0 +1,94 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #009688; /* Teal background */
+    display: flex;
+    flex-direction: column; /* Ensure header is on top */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Header */
+.header {
+    width: 100%; /* Full width header */
+    text-align: center;
+    background-color: #00796b;
+    color: white;
+    padding: 20px;
+    animation: fadeIn 2s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Contact Form Section */
+.contact-form-section {
+    background: white; /* Form stays white */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px; /* Form is centered */
+    margin-top: 100px; /* To avoid overlap with the header */
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    width: 100%; /* Full width input boxes */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #00796b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+form button:hover {
+    background-color: #005b4f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-form-section {
+        width: 100%;
+    }
+}
+
+/* Transition for Paragraphs in About Section (index.html) */
+.about-section p {
+    transition: color 0.3s ease-in-out;
+}
+
+.about-section p:hover {
+    color: #00796b;
+}

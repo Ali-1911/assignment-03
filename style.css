@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  line-height: 1.5;
+  background-color: #b6b4b3;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+}
+
+.container {
+  max-width: 1170px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+  transition: all 0.5s ease;
+  background-color: rgb(255, 0, 0);
+  padding: 20px;
+  text-align: center;
+  color: white;
+  animation: fadeInHeader 2s ease-in-out;
+}
+.header.fixed {
+  background-color: white;
+  position: fixed;
+}
+.header.fixed .fish-name a {
+  color: #0f4c81;
+}
+.header.fixed .nav ul li a {
+  color: #0f4c81;
+}
+.header.fixed .nav-toggle {
+  border-color: #0f4c81;
+}
+.header.fixed .nav-toggle span,
+.header.fixed .nav-toggle span:before,
+.header.fixed .nav-toggle span:after {
+  background-color: #0f4c81;
+}
+.header .fish-name a {
+  text-decoration: none;
+  font-size: 30px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 2px;
+  transition: all 0.5s ease;
+}
+.header .nav-toggle {
+  width: 40px;
+  height: 34px;
+  border: 1px solid white;
+  border-radius: 3px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
+}
+.header .nav-toggle span {
+  height: 1px;
+  display: block;
+  width: 16px;
+  background-color: white;
+  position: relative;
+  transition: all 0.5s ease;
+}
+.header .nav-toggle span:before, .header .nav-toggle span:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 1px;
+  width: 100%;
+  background-color: white;
+  transition: all 0.5s ease;
+}
+.header .nav-toggle span:before {
+  transform: translateY(-6px);
+}
+.header .nav-toggle span:after {
+  transform: translateY(6px);
+}
+.header .nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.header .nav ul li {
+  display: inline-block;
+  margin-left: 30px;
+}
+.header .nav ul li a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: yellow;
+  padding: 25px 0;
+  display: block;
+  transition: all 0.5s ease;
+}
+.header .nav ul li a:hover {
+  color: white;
+}
+
+.home-section {
+  min-height: 100vh;
+  background-image: url("../img/aqua.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0f4c81;
+  padding: 20px;
+}
+.home-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.home-section img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.about-section, .predators-section {
+  padding: 40px 15px;
+  text-align: center;
+  background-color: #ff8484;
+}
+.about-section p, .predators-section p {
+  font-size: 1rem;
+  color: #333;
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: justify;
+  transition: color 0.3s ease;
+}
+.about-section p:hover, .predators-section p:hover {
+  color: #555;
+}
+.about-section h1, .about-section h2, .predators-section h1, .predators-section h2 {
+  color: #0f4c81;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+.about-section h1:hover, .about-section h2:hover, .predators-section h1:hover, .predators-section h2:hover {
+  color: #FF9800;
+}
+
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+  background-color: #ff8484;
+}
+#gallery figure {
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: white;
+  transition: transform 0.3s;
+}
+#gallery figure:hover {
+  transform: scale(1.05);
+}
+#gallery figure img {
+  width: 100%;
+  height: auto;
+}
+#gallery figure figcaption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  transition: color 0.3s ease, font-size 0.3s ease;
+}
+#gallery figure figcaption:hover {
+  color: #ff9800;
+  font-size: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #ff8484;
+}
+table th, table td {
+  border: 1px solid #0f4c81;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+table th {
+  background-color: #0f4c81;
+}
+
+.contact-form {
+  border: 2px dashed #0f4c81;
+}
+
+button {
+  background-color: red;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  position: relative;
+}
+button::after {
+  content: attr(data-label);
+  text-transform: uppercase;
+  display: block;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+video {
+  display: block;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+video:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.banner {
+  background-color: #0f4c81;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.banner h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.banner:hover {
+  background-color: #ac0101;
+  transform: scale(1.05);
+}
+
+@keyframes fadeInHeader {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}/*# sourceMappingURL=style.css.map */

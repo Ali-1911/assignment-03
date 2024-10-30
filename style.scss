@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap');
+
+// Variables for colors
+$teal: #0f4c81;
+$yellow: yellow;
+$white: white;
+$red: red;
+$background-color: #b6b4b3;
+
+// Global styles
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    line-height: 1.5;
+    background-color: $background-color;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+}
+
+// Container Classes
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+// Header and Menu Styles
+.header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    transition: all 0.5s ease;
+    background-color: rgb(255, 0, 0);
+    padding: 20px;
+    text-align: center;
+    color: white;
+    animation: fadeInHeader 2s ease-in-out;
+
+    &.fixed {
+        background-color: $white;
+        position: fixed;
+
+        .fish-name a {
+            color: $teal;
+        }
+
+        .nav ul li a {
+            color: $teal;
+        }
+
+        .nav-toggle {
+            border-color: $teal;
+
+            span,
+            span:before,
+            span:after {
+                background-color: $teal;
+            }
+        }
+    }
+
+    .fish-name a {
+        text-decoration: none;
+        font-size: 30px;
+        color: $white;
+        text-transform: uppercase;
+        font-weight: 900;
+        letter-spacing: 2px;
+        transition: all 0.5s ease;
+    }
+
+    .nav-toggle {
+        width: 40px;
+        height: 34px;
+        border: 1px solid $white;
+        border-radius: 3px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s ease;
+
+        span {
+            height: 1px;
+            display: block;
+            width: 16px;
+            background-color: $white;
+            position: relative;
+            transition: all 0.5s ease;
+
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 1px;
+                width: 100%;
+                background-color: $white;
+                transition: all 0.5s ease;
+            }
+
+            &:before {
+                transform: translateY(-6px);
+            }
+
+            &:after {
+                transform: translateY(6px);
+            }
+        }
+    }
+
+    .nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            margin-left: 30px;
+
+            a {
+                text-decoration: none;
+                font-size: 16px;
+                font-weight: 600;
+                color: $yellow;
+                padding: 25px 0;
+                display: block;
+                transition: all 0.5s ease;
+
+                &:hover {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+// Home Section
+.home-section {
+    min-height: 100vh;
+    background-image: url('../img/aqua.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $teal;
+    padding: 20px;
+
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+
+// About and Predators Sections
+.about-section, .predators-section {
+    padding: 40px 15px;
+    text-align: center;
+    background-color: #ff8484;
+
+    p {
+        font-size: 1rem;
+        color: #333;
+        max-width: 800px;
+        margin: 20px auto;
+        text-align: justify;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: #555;
+        }
+    }
+
+    h1, h2 {
+        color: $teal;
+        font-weight: 600;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: #FF9800;
+        }
+    }
+}
+
+// Gallery Section
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+    background-color: #ff8484;
+
+    figure {
+        border: 1px solid #ddd;
+        padding: 10px;
+        background-color: white;
+        transition: transform 0.3s;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        figcaption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #555;
+            transition: color 0.3s ease, font-size 0.3s ease;
+
+            &:hover {
+                color: #ff9800;
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+// Table Styling
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ff8484;
+
+    th, td {
+        border: 1px solid $teal;
+        padding: 10px;
+        text-align: center;
+        color: $white;
+    }
+
+    th {
+        background-color: $teal;
+    }
+}
+
+// Contact Form
+.contact-form {
+    border: 2px dashed $teal;
+}
+
+// Button Styles
+button {
+    background-color: $red;
+    border: none;
+    padding: 10px 20px;
+    color: $white;
+    position: relative;
+
+    &::after {
+        content: attr(data-label);
+        text-transform: uppercase;
+        display: block;
+        font-weight: bold;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+// Video Styling
+video {
+    display: block;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    }
+}
+
+// Banner Styling
+.banner {
+    background-color: $teal;
+    padding: 20px;
+    text-align: center;
+    color: $white;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    h1 {
+        margin: 0;
+        font-size: 2rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    &:hover {
+        background-color: #ac0101;
+        transform: scale(1.05);
+    }
+}
+
+// Animation for Header
+@keyframes fadeInHeader {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
